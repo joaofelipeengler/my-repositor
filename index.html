@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site Responsivo</title>
+    <title>Meu Site Minimalista</title>
     <style>
         * {
             box-sizing: border-box;
@@ -33,15 +33,36 @@
             margin: 0;
         }
         nav li {
-            display: block;
-            margin: 10px 0;
+            display: inline-block;
+            margin: 0 5px;
         }
         nav a {
             color: white;
             text-decoration: none;
-            font-size: 18px;
-            padding: 5px 10px;
-            display: inline-block;
+            font-size: 0; /* Remove o texto */
+            padding: 15px;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 40px;
+            height: 40px;
+        }
+        /* Ícones para os links (usando caracteres Unicode como placeholder) */
+        nav li:nth-child(1) a::before {
+            content: "🏠";
+            font-size: 20px;
+        }
+        nav li:nth-child(2) a::before {
+            content: "ℹ️";
+            font-size: 20px;
+        }
+        nav li:nth-child(3) a::before {
+            content: "🛠️";
+            font-size: 20px;
+        }
+        nav li:nth-child(4) a::before {
+            content: "✉️";
+            font-size: 20px;
         }
         .container {
             width: 90%;
@@ -64,7 +85,6 @@
             margin-top: 20px;
         }
         
-        /* Estilo para formulário responsivo */
         form {
             width: 100%;
         }
@@ -92,10 +112,8 @@
             width: 100%;
         }
         
-        /* Media Query para tablets e desktops */
         @media (min-width: 768px) {
             nav li {
-                display: inline;
                 margin: 0 15px;
             }
             .container {
@@ -104,43 +122,49 @@
             input[type="submit"] {
                 width: auto;
             }
+            nav a {
+                width: auto;
+                padding: 15px 20px;
+            }
+            nav a::before {
+                margin-right: 8px;
+            }
+            /* Mostra texto ao lado dos ícones em telas maiores */
+            nav a {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Meu Site Responsivo</h1>
-        <p>Adaptado para celulares e desktops</p>
+        <h1>Meu Site Minimalista</h1>
+        <p>Navegação visual sem texto</p>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="#inicio" title="Início"></a></li>
+            <li><a href="#sobre" title="Sobre"></a></li>
+            <li><a href="#servicos" title="Serviços"></a></li>
+            <li><a href="#contato" title="Contato"></a></li>
         </ul>
     </nav>
 
     <div class="container">
         <section id="inicio">
             <h2>Início</h2>
-            <p>Este é um site responsivo que se adapta automaticamente a celulares, tablets e computadores.</p>
+            <p>Esta versão removeu todo o texto da barra de navegação laranja, substituindo por ícones.</p>
         </section>
 
         <section id="sobre">
             <h2>Sobre Mim</h2>
-            <p>Adicione aqui informações sobre você ou seu negócio. O texto se ajustará automaticamente ao tamanho da tela.</p>
+            <p>A navegação agora é puramente visual, com ícones representando cada seção.</p>
         </section>
 
         <section id="servicos">
             <h2>Nossos Serviços</h2>
-            <p>Descreva aqui os serviços que você oferece.</p>
-            <ul>
-                <li>Serviço 1 - Descrição breve</li>
-                <li>Serviço 2 - Descrição breve</li>
-                <li>Serviço 3 - Descrição breve</li>
-            </ul>
+            <p>Em telas pequenas, apenas os ícones são mostrados. Em telas maiores, o texto aparece ao lado.</p>
         </section>
 
         <section id="contato">
@@ -161,11 +185,10 @@
     </div>
 
     <footer>
-        <p>&copy; <span id="year"></span> Meu Site Responsivo. Todos os direitos reservados.</p>
+        <p>&copy; <span id="year"></span> Meu Site Minimalista. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        // Atualiza o ano no footer automaticamente
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
