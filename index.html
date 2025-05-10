@@ -3,120 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site com Faixa Decorativa</title>
+    <title>Meu Site Moderno</title>
     <style>
         * {
             box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             color: #333;
             background-color: #181717;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         header {
             background: #000000;
             color: white;
-            padding: 20px 0;
+            padding: 2rem 0;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-        /* Faixa laranja puramente decorativa */
-        .faixa-laranja {
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Faixa azul decorativa */
+        .faixa-azul {
             background: #1ddbe8;
-            height: 15px;
+            height: 8px;
             width: 100%;
+            box-shadow: 0 2px 5px rgba(29, 219, 232, 0.3);
         }
+        
         .container {
             width: 90%;
             max-width: 1200px;
-            margin: auto;
-            padding: 15px;
+            margin: 2rem auto;
+            padding: 0 15px;
+            flex: 1;
         }
         section {
-            padding: 15px;
-            margin-bottom: 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-        footer {
-            background:#1ddbe8;
-            color: rgb(0, 0, 0);
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
+        section:hover {
+            transform: translateY(-5px);
+        }
+        section h2 {
+            color: #1ddbe8;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
         }
         
+        footer {
+            background: #1ddbe8;
+            color: #000;
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+            font-weight: bold;
+        }
+        
+        /* Estilos do formulário */
         form {
             width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
         }
         label {
             display: block;
-            margin-top: 10px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #555;
         }
         input[type="text"],
         input[type="email"],
         textarea {
             width: 100%;
-            padding: 8px;
-            margin-top: 5px;
+            padding: 12px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #1ddbe8;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(29, 219, 232, 0.2);
+        }
+        textarea {
+            min-height: 150px;
+            resize: vertical;
         }
         input[type="submit"] {
             background: #e8491d;
             color: white;
             border: none;
-            padding: 10px 20px;
-            margin-top: 10px;
-            border-radius: 4px;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
             cursor: pointer;
-            width: 100%;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+            width: auto;
+        }
+        input[type="submit"]:hover {
+            background: #d1401a;
+            transform: translateY(-2px);
         }
         
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
+            header {
+                padding: 1.5rem 0;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
             .container {
-                width: 80%;
+                width: 95%;
+                margin: 1.5rem auto;
+            }
+            section {
+                padding: 1.5rem;
             }
             input[type="submit"] {
-                width: auto;
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Meu Site com Faixa Decorativa</h1>
-        <p>Esta versão tem uma faixa laranja sem função</p>
+        <h1>Meu Site Moderno</h1>
+        <p>Design limpo com toque azul</p>
     </header>
 
-    <!-- Faixa laranja puramente decorativa -->
-    <div class="faixa-laranja"></div>
+    <!-- Faixa azul decorativa -->
+    <div class="faixa-azul"></div>
 
     <div class="container">
         <section id="inicio">
             <h2>Início</h2>
-            <p>A faixa laranja acima é apenas um elemento visual, sem links ou função.</p>
+            <p>A faixa azul acima é um elemento puramente decorativo que adiciona um toque moderno ao design.</p>
         </section>
 
         <section id="sobre">
             <h2>Sobre</h2>
-            <p>Removi completamente a navegação que estava na faixa laranja.</p>
+            <p>Este design foi otimizado para ser visualmente atraente e responsivo em todos os dispositivos. A faixa azul serve como um elemento de separação visual entre o cabeçalho e o conteúdo principal.</p>
         </section>
 
         <section id="contato">
             <h2>Contato</h2>
             <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
                 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
                 
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </div>
                 
                 <input type="submit" value="Enviar Mensagem">
             </form>
@@ -124,7 +198,7 @@
     </div>
 
     <footer>
-        <p>&copy; <span id="year"></span> Meu Site. Todos os direitos reservados.</p>
+        <p>&copy; <span id="year"></span> Meu Site Moderno. Todos os direitos reservados.</p>
     </footer>
 
     <script>
